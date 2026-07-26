@@ -1,0 +1,124 @@
+aid: mls-grid
+url: https://raw.githubusercontent.com/api-evangelist/mls-grid/refs/heads/main/apis.yml
+name: MLS Grid
+kind: company
+description: >-
+  The MLS Grid is a United States MLS data-distribution cooperative created by a network of
+  Multiple Listing Services to give brokers, MLSs and technology vendors ONE normalized data
+  feed, ONE license agreement and ONE compliance process instead of dozens of per-MLS RETS and
+  Web API feeds. It ingests listing data from participating MLSs, converts it to the RESO Data
+  Dictionary, and republishes it as a single RESO Web API (OData v4) replication surface at
+  https://api.mlsgrid.com/v2/. It sits in the middle of the residential real estate value chain,
+  between the MLSs that own the data and the IDX/VOW sites, portals and proptech applications
+  that display it. Its API posture is the sector archetype: the documentation is genuinely public
+  and complete, and MLS Grid is RESO-certified for Data Dictionary 2.0 and Web API Server Core
+  2.0.0 in the RESO certification directory (UOI T00000045) — but nothing is reachable without
+  credentials. Every anonymous call to the service root, to /Property and to the OData $metadata
+  document returns HTTP 401. Access requires the MLS Grid Master Data License Agreement plus
+  approval by each originating MLS before a long-lived OAuth 2.0 bearer token is issued in the
+  MLS Grid web application. Certified, documented, and closed.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mls-grid.png
+tags:
+- Real Estate
+- United States
+- MLS
+- RESO
+- Property Listings
+- IDX
+- PropTech
+- OData
+- Data Licensing
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis:
+- aid: mls-grid:mls-grid-web-api
+  name: MLS Grid Web API v2
+  description: >-
+    MLS Grid's RESO Web API — a replication-oriented OData v4 surface over listing data
+    normalized to the RESO Data Dictionary and pooled from the participating MLSs. Documented
+    entity sets are Property, Member, Office, OpenHouse and Lookup, with Media, Rooms and
+    UnitTypes available through $expand (and Media standalone where the originating MLS permits).
+    Replication is driven by $filter on OriginatingSystemName plus ModificationTimestamp, paged
+    with @odata.nextLink. Authentication is a long-lived OAuth 2.0 bearer token issued through the
+    MLS Grid web application after a subscription, a licensee and MLS approval are in place; the
+    service requires an Accept-Encoding header containing gzip on every request. Documented rate
+    limits are 2 requests/second, 7,200 requests/hour, 40,000 requests/24 hours and 4 GB/hour,
+    enforced with HTTP 429 and token suspension. Probed anonymously on 2026-07-26: the service
+    root, /Property and $metadata all returned HTTP 401, so no machine-readable contract could be
+    downloaded.
+  humanURL: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
+  baseURL: https://api.mlsgrid.com/v2/
+  tags:
+  - Real Estate
+  - MLS
+  - RESO
+  - OData
+  - Property Listings
+  - Replication
+  properties:
+  - type: Documentation
+    url: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
+  - type: Documentation
+    url: https://docs.mlsgrid.com/master.md
+  - type: Metadata
+    url: https://api.mlsgrid.com/v2/$metadata
+  - type: LicenseAgreement
+    url: https://www.mlsgrid.com/s/MLS-GRID-Data-License-Agreement.pdf
+  - type: Support
+    url: mailto:support@mlsgrid.com
+common:
+- type: Website
+  url: https://www.mlsgrid.com/
+- type: Documentation
+  url: https://docs.mlsgrid.com/
+- type: Documentation
+  name: Documentation index (llms.txt)
+  url: https://docs.mlsgrid.com/llms.txt
+- type: Documentation
+  name: Documentation sitemap
+  url: https://docs.mlsgrid.com/sitemap.md
+- type: Portal
+  name: MLS Grid web application (member login)
+  url: https://app.mlsgrid.com/
+- type: SignUp
+  name: Interest form
+  url: https://www.mlsgrid.com/interest-form
+- type: LicenseAgreement
+  name: MLS Grid Data License Agreement (PDF)
+  url: https://www.mlsgrid.com/s/MLS-GRID-Data-License-Agreement.pdf
+- type: FAQ
+  url: https://www.mlsgrid.com/faq
+- type: Resources
+  url: https://www.mlsgrid.com/resources
+- type: Overview
+  url: https://www.mlsgrid.com/overview
+- type: About
+  url: https://www.mlsgrid.com/whoisthemlsgrid
+- type: Customers
+  name: Approved vendors
+  url: https://www.mlsgrid.com/vendors
+- type: Blog
+  name: News
+  url: https://www.mlsgrid.com/news
+- type: Contact
+  url: https://www.mlsgrid.com/contact-us
+- type: Support
+  url: mailto:support@mlsgrid.com
+- type: GitHubOrganization
+  url: https://github.com/mlsgrid
+- type: Certification
+  name: RESO certification directory entry (UOI T00000045)
+  url: https://certification.reso.org/summary/T00000045
+- type: Certification
+  name: RESO list of certified organizations
+  url: https://www.reso.org/certificates/
+- type: Documentation
+  name: RESO Web API specification
+  url: https://www.reso.org/reso-web-api/
+- type: Documentation
+  name: RESO Data Dictionary
+  url: https://www.reso.org/data-dictionary/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
