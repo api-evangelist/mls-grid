@@ -89,6 +89,26 @@ Only then is a long-lived OAuth 2.0 bearer token generated on the token tab of t
 - [RESO Web API specification](https://www.reso.org/reso-web-api/)
 - [RESO Data Dictionary](https://www.reso.org/data-dictionary/)
 
+## Artifacts
+
+Harvested from the public documentation on 2026-07-26. Nothing below was derived from a
+machine-readable contract — the OData `$metadata` document returns HTTP 401 anonymously.
+
+- `authentication/mls-grid-authentication.yml` — long-lived OAuth 2 bearer profile, issuance gate, gzip and media User-Agent requirements
+- `conventions/mls-grid-conventions.yml` — OData replication semantics: pagination, filter grammar, prefixed keys, signal fields, licence-in-payload
+- `errors/mls-grid-problem-types.yml` — documented and observed error conditions plus the OData error envelope
+- `rate-limits/mls-grid-rate-limits.yml` — 2 rps / 7,200 hr / 40,000 day / 4 GB hr, suspension and reinstatement
+- `changelog/mls-grid-changelog.yml` — 36 dated release notices (2025-02-18 → 2026-06-05)
+- `lifecycle/mls-grid-lifecycle.yml` — v2 URI versioning, deprecation practice, 7-day delete retention, no public status page or SLA
+- `conformance/mls-grid-conformance.yml` — RESO certification evidence plus OData/OAuth/RFC conformance assertions
+- `data-model/mls-grid-data-model.yml` — entity sets, expanded resources and relationships
+- `vocabulary/mls-grid-vocabulary.yml` — resources, signal fields, licence flags, enumerations, 37 originating systems with key/field prefixes
+- `examples/` — the Property and Lookup records published verbatim in the docs
+- `packages/mls-grid-packages.yml` — no first-party SDK; one third-party PyPI library
+- `llms/mls-grid-llms.txt` — the documentation site's own llms.txt, saved verbatim
+- `well-known/mls-grid-well-known.yml` — every `/.well-known/` probe missed; absence is the finding
+- `security/mls-grid-domain-security.yml` — TLS/HSTS/DNS posture across all four hosts
+
 ## Maintainers
 
 **FN:** Kin Lane

@@ -1,0 +1,10 @@
+{
+  "@odata.id": "https://api-demo.mlsgrid.com/v2/Lookup('ACT61bb678f24b9e68b94c1734e')",
+  "LookupKey": "ACT61bb678f24b9e68b94c1734e",
+  "LookupName": "AreaUnits",
+  "LookupValue": "Square Meters",
+  "ModificationTimestamp": "2021-12-16T16:21:35.529Z",
+  "OriginatingSystemName": "actris",
+  "StandardLookupValue": "Square Meters",
+  "MlgCanView": true
+}

@@ -1,0 +1,172 @@
+aid: mls-grid
+name: MLS Grid Vocabulary
+generated: '2026-07-26'
+method: searched
+source: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
+description: >-
+  The operating vocabulary of the MLS Grid RESO Web API v2 — the resources, signal fields,
+  license-control flags, enumerations and identifier conventions a data consumer must understand to
+  replicate. Field semantics come from the RESO Data Dictionary 2.0; everything prefixed "Mlg" is
+  MLS Grid's own extension.
+terms:
+- name: Property
+  type: Resource
+  description: RESO Data Dictionary Property resource — all listings for sale or lease.
+- name: Member
+  type: Resource
+  description: Real estate agent record.
+- name: Office
+  type: Resource
+  description: Brokerage office record.
+- name: OpenHouse
+  type: Resource
+  description: Open house event tied to a Property via ListingId.
+- name: Lookup
+  type: Resource
+  description: >-
+    Per-MLS enumeration values. LookupName + LookupValue with a StandardLookupValue mapping to RESO.
+    Recommended polling frequency is no more than once a day.
+- name: Media
+  type: ExpandedResource
+  description: >-
+    Photos and, in limited cases, documents for a Property, Member or Office. Keyed by MediaKey;
+    fetched via $expand.
+- name: Rooms
+  type: ExpandedResource
+  description: Room records on a Property (RoomKey, RoomType, RoomDimensions, RoomFeatures).
+- name: UnitTypes
+  type: ExpandedResource
+  description: Unit-type records on a Property (UnitTypeKey, UnitTypeType, UnitTypeActualRent, bed/bath counts).
+- name: BodyOfWater
+  type: ExpandedResource
+  description: Water-body resource expanded from Property; introduced for Northstar MLS on 2025-12-08.
+- name: OriginatingSystemName
+  type: SignalField
+  description: >-
+    MLS Grid's name for the source MLS (actris, mred, nwmls, ...). Case sensitive, usually lowercase,
+    and required in the $filter of every v2 request.
+- name: ModificationTimestamp
+  type: SignalField
+  description: >-
+    UTC timestamp of when MLS Grid last modified the record. The replication watermark — results are
+    ordered by it so a consumer can resume where it left off.
+- name: OriginatingSystemModificationTimestamp
+  type: SignalField
+  description: The source MLS's own modification time, carried through unchanged.
+- name: PhotosChangeTimestamp
+  type: SignalField
+  description: >-
+    Changes only alongside ModificationTimestamp; indicates the media records for the listing have
+    changed and local media copies must be replaced.
+- name: MediaModificationTimestamp
+  type: SignalField
+  description: >-
+    On a Media sub-document. A new or changed value means the image file itself changed and must be
+    re-downloaded from MediaURL.
+- name: MlgCanView
+  type: LicenseFlag
+  description: >-
+    Boolean delete/retention signal. True — save or update the record locally. False — remove it.
+    Records marked false leave the feed entirely after 7 days.
+- name: MlgCanUse
+  type: LicenseFlag
+  description: >-
+    Array of the Master Data License Agreement use cases the record qualifies for. Licensing is
+    enforced per record in the payload, not only in the contract.
+- name: IDX
+  type: UseCase
+  description: Internet Data Exchange — public consumer-facing display.
+- name: VOW
+  type: UseCase
+  description: Virtual Office Website — authenticated consumer display.
+- name: BO
+  type: UseCase
+  description: Back Office data subscription.
+- name: PT
+  type: UseCase
+  description: Broker Only / Participant Data Access.
+- name: StandardStatus
+  type: Enumeration
+  description: >-
+    RESO normalized listing status. Values provided — Active, ActiveUnderContract, Canceled, Closed,
+    ComingSoon, Delete, Expired, Hold, Incomplete, Pending, Withdrawn. Queried by standard name.
+- name: PropertyType
+  type: Enumeration
+  description: >-
+    RESO normalized property type. Values provided — BusinessOpportunity, CommercialLease,
+    CommercialSale, Farm, Land, ManufacturedInPark, Residential, ResidentialIncome, ResidentialLease.
+- name: StandardLookupValue
+  type: Enumeration
+  description: The RESO-normalized value a per-MLS LookupValue maps to.
+- name: Prefixed key
+  type: IdentifierConvention
+  description: >-
+    Key and MlsId fields carry a three-character MLS prefix (ACT, MRD, NWM, KEY, ...) so pooled
+    identifiers stay unique. Query with the prefix; strip it before external display.
+- name: Local field prefix
+  type: IdentifierConvention
+  description: >-
+    Non-Data-Dictionary fields specific to one MLS are prefixed with a four-character code plus an
+    underscore, e.g. ACT_ActiveOpenHouseCount, MRD_, NWM_.
+- name: Mlg prefix
+  type: IdentifierConvention
+  description: Any field beginning "Mlg" is an MLS Grid extension rather than a RESO Data Dictionary field.
+- name: '@odata.nextLink'
+  type: PaginationToken
+  description: Server-driven OData pagination link; follow it until a response no longer contains one.
+- name: '@odata.id'
+  type: IdentifierConvention
+  description: Canonical OData entity URL returned on each record.
+- name: '@odata.context'
+  type: Metadata
+  description: OData context URL naming the entity set the response belongs to.
+- name: String List Multi
+  type: DataType
+  description: >-
+    RESO type rendered by MLS Grid as a JSON array of strings (Appliances, ArchitecturalStyle,
+    AccessibilityFeatures, ...).
+- name: Replication
+  type: Concept
+  description: >-
+    The only supported access pattern. MLS Grid does not support real-time access; consumers do an
+    initial import filtered on MlgCanView eq true, then poll on a ModificationTimestamp watermark
+    without the MlgCanView filter so deletes are observed.
+originating_systems:
+- {code: actris, name: ACTRIS MLS, key_prefix: ACT, field_prefix: ACT_}
+- {code: carolina, name: Canopy MLS, key_prefix: CAR, field_prefix: CAR_}
+- {code: eciar, name: East Central Iowa Multiple Listing Service Inc., key_prefix: ECR, field_prefix: ECR_}
+- {code: flinthills, name: Flint Hills MLS, key_prefix: FHR, field_prefix: FHR_}
+- {code: scranton, name: Greater Scranton Board of REALTORS, key_prefix: GSB, field_prefix: GSB_}
+- {code: nira, name: Northwest Indiana REALTORS Association, key_prefix: NRA, field_prefix: NRA_}
+- {code: hmls, name: Heartland Multiple Listing Service Inc., key_prefix: HMS, field_prefix: HMS_}
+- {code: highland, name: Highland Lakes Association of REALTORS, key_prefix: HLM, field_prefix: HLM_}
+- {code: ires, name: IRES MLS, key_prefix: IRE, field_prefix: IRE_}
+- {code: irmls, name: Indiana Regional MLS, key_prefix: IRM, field_prefix: IRM_}
+- {code: lbor, name: Lawrence Board of REALTORS, key_prefix: LBR, field_prefix: LBR_}
+- {code: lsar, name: Lake Superior Area REALTORS, key_prefix: LSA, field_prefix: LSA_}
+- {code: lascruces, name: Southern New Mexico MLS, key_prefix: LCN, field_prefix: LCN_}
+- {code: maris2, name: MARIS MLS, key_prefix: MIS, field_prefix: MIS_}
+- {code: mfrmls, name: My Florida Regional MLS DBA Stellar MLS, key_prefix: MFR, field_prefix: MFR_}
+- {code: mibor, name: MIBOR REALTOR Association, key_prefix: MBR, field_prefix: MBR_}
+- {code: mlsok, name: MLSOK, key_prefix: OKC, field_prefix: OKC_}
+- {code: mred, name: MRED Midwest Real Estate Data, key_prefix: MRD, field_prefix: MRD_}
+- {code: neirbr, name: Northeast Iowa Regional Board of REALTORS, key_prefix: NBR, field_prefix: NBR_}
+- {code: nocoast, name: NoCoast MLS, key_prefix: NOC, field_prefix: NOC_}
+- {code: northstar, name: NorthstarMLS, key_prefix: NST, field_prefix: NST_}
+- {code: nwmls, name: Northwest MLS, key_prefix: NWM, field_prefix: NWM_}
+- {code: onekey2, name: OneKey MLS, key_prefix: KEY, field_prefix: KEY_}
+- {code: paar, name: Prescott Area Association of REALTORS, key_prefix: PAR, field_prefix: PAR_}
+- {code: pacmls, name: PACMLS, key_prefix: PAC, field_prefix: PAC_}
+- {code: pikewayne, name: Pike/Wayne Association of REALTORS, key_prefix: PWB, field_prefix: PWB_}
+- {code: prairie, name: Mid-Kansas MLS (Prairie Land REALTORS), key_prefix: PRA, field_prefix: PRA_}
+- {code: ranw, name: REALTOR Association Northeast Wisconsin, key_prefix: RAN, field_prefix: RAN_}
+- {code: realtrac, name: RT RealTracs, key_prefix: RTC, field_prefix: RTC_}
+- {code: recolorado, name: REcolorado, key_prefix: REC, field_prefix: REC_}
+- {code: rmlsa, name: RMLS Alliance, key_prefix: RMA, field_prefix: RMA_}
+- {code: rrar, name: Reelfoot Regional Association of REALTORS, key_prefix: RRA, field_prefix: RRA_}
+- {code: sarmls, name: Spokane Association of REALTORS, key_prefix: SAR, field_prefix: SAR_}
+- {code: sckansas, name: South Central Kansas MLS, key_prefix: SCK, field_prefix: SCK_}
+- {code: somo, name: Southern Missouri Regional MLS (SOMO), key_prefix: SOM, field_prefix: SOM_}
+- {code: spartanburg, name: Spartanburg Board of REALTORS, key_prefix: SPN, field_prefix: SPN_}
+- {code: sunflower, name: Sunflower MLS, key_prefix: SUN, field_prefix: SUN_}
+originating_systems_count: 37

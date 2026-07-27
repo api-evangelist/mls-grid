@@ -1,0 +1,37 @@
+generated: '2026-07-26'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: api.mlsgrid.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb  6 23:59:59 2027 GMT
+  hsts: false
+  note: >-
+    Probed manually — every anonymous request returns HTTP 401 (or HTTP 400 "COMPRESSION REQUIRED"
+    without Accept-Encoding gzip), so the automated prober skipped it. Server header nginx/1.30.3,
+    HTTP/2, no Strict-Transport-Security response header.
+- host: www.mlsgrid.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 29 04:32:43 2026 GMT
+  hsts: true
+  hsts_max_age: 15552000
+- host: app.mlsgrid.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Feb  6 23:59:59 2027 GMT
+  hsts: false
+- host: docs.mlsgrid.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 31 04:03:47 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: mlsgrid.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

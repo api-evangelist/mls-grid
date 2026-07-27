@@ -1,0 +1,38 @@
+generated: '2026-07-26'
+method: searched
+source: live anonymous probes
+note: >-
+  No /.well-known/ discovery document could be retrieved from any MLS Grid host. Every path on the
+  API host is authenticated (HTTP 401 with gzip, HTTP 400 "COMPRESSION REQUIRED" without), the
+  marketing and documentation hosts return 404, and the web application returns its HTML SPA shell
+  with HTTP 200 for any unmatched path — so its 200s are not discovery documents. No raw files were
+  saved because nothing real was served. Absence is the finding.
+hosts:
+- host: https://api.mlsgrid.com
+  documents:
+  - {path: /.well-known/security.txt, status: 401}
+  - {path: /.well-known/openid-configuration, status: 401}
+  - {path: /.well-known/oauth-authorization-server, status: 401}
+  - {path: /.well-known/api-catalog, status: 401}
+  note: >-
+    Anonymous requests with Accept-Encoding gzip return 401 for every path; without gzip the service
+    returns 400 "COMPRESSION REQUIRED" before evaluating auth.
+- host: https://www.mlsgrid.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://docs.mlsgrid.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  note: >-
+    The documentation host does publish an agent-facing index at /llms.txt (HTTP 200), captured in
+    llms/mls-grid-llms.txt.
+- host: https://app.mlsgrid.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 200, valid: false, note: 'returns the web application HTML shell, not an OIDC discovery document'}
+  - {path: /.well-known/oauth-authorization-server, status: 200, valid: false, note: 'returns the web application HTML shell, not RFC 8414 metadata'}
+documents_found: 0
+probed_on: '2026-07-26'

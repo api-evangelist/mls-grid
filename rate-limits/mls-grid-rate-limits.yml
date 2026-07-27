@@ -1,0 +1,79 @@
+aid: mls-grid
+name: MLS Grid Web API Rate Limits
+generated: '2026-07-26'
+method: searched
+description: >-
+  Rate limits and data caps MLS Grid publishes for all data consumers of the v2 Web API. Enforcement
+  is per access token: exceeding a limit returns HTTP 429 and suspends the token, with automatic
+  reinstatement once usage falls back within the limits.
+specification: API Commons Rate Limits 0.1
+source: https://docs.mlsgrid.com/master.md
+policies:
+- name: Request Rate
+  scope: per-token
+  limit: 2
+  unit: request
+  per: second
+  enforcement: hard
+  onExceeded:
+    status: 429
+    action: temporary-suspension
+- name: Hourly Requests
+  scope: per-token
+  limit: 7200
+  unit: request
+  per: hour
+  enforcement: hard
+  onExceeded:
+    status: 429
+    action: temporary-suspension
+- name: Daily Requests
+  scope: per-token
+  limit: 40000
+  unit: request
+  per: 24-hours
+  enforcement: hard
+  onExceeded:
+    status: 429
+    action: temporary-suspension
+- name: Hourly Data Volume
+  scope: per-token
+  limit: 4
+  unit: GB
+  per: hour
+  enforcement: hard
+  onExceeded:
+    status: 429
+    action: temporary-suspension
+- name: Records Per Request
+  scope: per-request
+  limit: 5000
+  unit: record
+  per: request
+  enforcement: hard
+  note: Defaults to 500 when $top is not specified; drops to 1000 when $expand is used.
+- name: Lookup Resource Polling
+  scope: per-token
+  limit: 1
+  unit: request
+  per: day
+  enforcement: advisory
+  note: >-
+    MLS Grid asks consumers not to pull the Lookup resource more than once a day; more frequent
+    polling may result in interruption of service for inefficient usage practices.
+signaling:
+  status: 429
+  headers: []
+  note: No RateLimit-* or Retry-After headers are documented.
+notification:
+  channels:
+  - Email to the primary contact on the vendor account before and on suspension.
+  - Messages on the MLS Grid timeline in the web application.
+  usage_visibility: >-
+    Hourly usage summary on the Usage tab of the data subscription; 24-hour breakdown via the Usage
+    Logs button.
+reinstatement: >-
+  Suspended token permissions are automatically reinstated once enough time has passed that request
+  count and data volume fall back within the limits.
+exceptions:
+  process: Email support@mlsgrid.com in advance for guidance where limits must be exceeded.

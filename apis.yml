@@ -61,13 +61,39 @@ apis:
     url: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
   - type: Documentation
     url: https://docs.mlsgrid.com/master.md
+  - type: APIReference
+    name: API Version 2.0 reference
+    url: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
+  - type: GettingStarted
+    name: MLS Grid Documentation — overview and how to start replicating
+    url: https://docs.mlsgrid.com/master.md
   - type: Metadata
     url: https://api.mlsgrid.com/v2/$metadata
+  - type: RateLimits
+    name: Documented rate limits and data caps
+    url: rate-limits/mls-grid-rate-limits.yml
+  - type: Authentication
+    name: Authentication profile
+    url: authentication/mls-grid-authentication.yml
+  - type: Conventions
+    name: API conventions (OData replication semantics)
+    url: conventions/mls-grid-conventions.yml
+  - type: ErrorCatalog
+    name: Error conditions and envelope
+    url: errors/mls-grid-problem-types.yml
+  - type: DataModel
+    name: Entity model and relationships
+    url: data-model/mls-grid-data-model.yml
+  - type: Examples
+    name: Documented request and response examples
+    url: examples/_index.yml
   - type: LicenseAgreement
     url: https://www.mlsgrid.com/s/MLS-GRID-Data-License-Agreement.pdf
   - type: Support
     url: mailto:support@mlsgrid.com
 common:
+- type: DomainSecurity
+  url: security/mls-grid-domain-security.yml
 - type: Website
   url: https://www.mlsgrid.com/
 - type: Documentation
@@ -119,6 +145,45 @@ common:
 - type: Documentation
   name: RESO Data Dictionary
   url: https://www.reso.org/data-dictionary/
+- type: TermsOfService
+  name: Terms of Use
+  url: https://app.mlsgrid.com/termsofuse
+- type: PrivacyPolicy
+  url: https://app.mlsgrid.com/privacypolicy
+- type: ChangeLog
+  name: Release notices (per originating MLS)
+  url: https://docs.mlsgrid.com/
+- type: ChangeLog
+  name: Structured changelog
+  url: changelog/mls-grid-changelog.yml
+- type: Compliance
+  name: RESO certification (Data Dictionary 2.0, Web API Server Core 2.0.0)
+  url: https://certification.reso.org/summary/T00000045
+- type: Conformance
+  name: Standards conformance
+  url: conformance/mls-grid-conformance.yml
+- type: Authentication
+  url: authentication/mls-grid-authentication.yml
+- type: Conventions
+  url: conventions/mls-grid-conventions.yml
+- type: ErrorCatalog
+  url: errors/mls-grid-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/mls-grid-lifecycle.yml
+- type: DataModel
+  url: data-model/mls-grid-data-model.yml
+- type: RateLimits
+  url: rate-limits/mls-grid-rate-limits.yml
+- type: Vocabulary
+  url: vocabulary/mls-grid-vocabulary.yml
+- type: Examples
+  url: examples/_index.yml
+- type: Packages
+  name: Client libraries (no first-party SDK)
+  url: packages/mls-grid-packages.yml
+- type: LLMsTxt
+  name: Documentation llms.txt (verbatim)
+  url: llms/mls-grid-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

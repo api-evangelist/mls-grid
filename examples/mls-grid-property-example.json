@@ -1,0 +1,225 @@
+{
+  "@odata.id": "https://api-demo.mlsgrid.com/v2/Property('ACT107472571')",
+  "AccessibilityFeatures": [
+    "Customized Wheelchair Accessible"
+  ],
+  "ACT_ActiveOpenHouseCount": "0",
+  "AdditionalParcelsYN": false,
+  "Appliances": [
+    "Built-In Gas Oven",
+    "Built-In Gas Range",
+    "Dishwasher",
+    "Microwave"
+  ],
+  "AssociationYN": false,
+  "BathroomsFull": 3,
+  "BathroomsHalf": 0,
+  "BathroomsTotalInteger": 3,
+  "BedroomsTotal": 4,
+  "BuyerAgencyCompensation": "3.000",
+  "BuyerAgencyCompensationType": "%",
+  "BuyerOfficeKey": "ACT1513635",
+  "CoBuyerOfficeKey": "ACT1513635",
+  "CommunityFeatures": [
+    "None"
+  ],
+  "ConstructionMaterials": [
+    "HardiPlank Type"
+  ],
+  "Cooling": [
+    "Ceiling Fan(s)",
+    "Central Air"
+  ],
+  "CountyOrParish": "Williamson",
+  "CoveredSpaces": 0,
+  "DirectionFaces": "East",
+  "Disclosures": [
+    "Owner/Agent"
+  ],
+  "ACT_ElementaryOther": "Gateway College Prep",
+  "ElementarySchool": "Jo Ann Ford",
+  "ACT_EstimatedTaxes": "4934.00",
+  "ACT_ETJExtraTerritorialJurdn": "No",
+  "ExteriorFeatures": [
+    "None"
+  ],
+  "ACT_FEMAFloodPlain": "No",
+  "Fencing": [
+    "Back Yard",
+    "Front Yard"
+  ],
+  "FireplacesTotal": 0,
+  "Flooring": [
+    "Vinyl"
+  ],
+  "FoundationDetails": [
+    "Slab"
+  ],
+  "GarageSpaces": 0,
+  "GreenEnergyEfficient": [
+    "None"
+  ],
+  "GreenSustainability": [
+    "None"
+  ],
+  "ACT_GuestAccommodatonDesc": "None",
+  "Heating": [
+    "Central"
+  ],
+  "HighSchool": "East View",
+  "HorseAmenities": [
+    "None"
+  ],
+  "HorseYN": false,
+  "ACT_IDXOptInYN": "1",
+  "InteriorFeatures": [
+    "Ceiling Fan(s)",
+    "Beamed Ceilings",
+    "Gas Dryer Hookup",
+    "Kitchen Island",
+    "Multiple Dining Areas",
+    "No Interior Steps",
+    "Open Floorplan",
+    "Primary Bedroom on Main",
+    "Washer Hookup"
+  ],
+  "InternetAddressDisplayYN": true,
+  "InternetAutomatedValuationDisplayYN": false,
+  "InternetConsumerCommentYN": false,
+  "InternetEntireListingDisplayYN": true,
+  "ACT_LastChangeTimestamp": "2020-12-05T15:32:42.710",
+  "ACT_LastChangeType": "Price Decrease",
+  "ACT_LastHumanModificationTimestamp": "2020-12-05T15:41:31.400",
+  "ACT_LaundryLocation": "Main Level",
+  "Levels": [
+    "One"
+  ],
+  "ListAgentAOR": "Austin Board Of Realtors",
+  "ListAgentDirectPhone": "(512) 400-0188",
+  "ListAgentEmail": "michael.villanueva@cbunited.com",
+  "ListAgentFullName": "Michael Villanueva",
+  "ListAgentKey": "ACT31371801",
+  "ListAgentMlsId": "ACT717866",
+  "ListAOR": "Austin Board Of Realtors",
+  "ListingContractDate": "2020-10-10",
+  "ListingId": "ACT1475089",
+  "ListingKey": "ACT107472571",
+  "ListOfficeKey": "ACT1513635",
+  "ListOfficeMlsId": "ACT024R11",
+  "ListOfficeName": "Coldwell Banker Realty",
+  "ListOfficePhone": "(512) 233-4868",
+  "ListPrice": 474800,
+  "LivingArea": 2400,
+  "LivingAreaSource": "Public Records",
+  "LotFeatures": [
+    "Back Yard",
+    "Trees-Moderate"
+  ],
+  "LotSizeAcres": 0.223,
+  "LotSizeSquareFeet": 9713.88,
+  "MainLevelBedrooms": 4,
+  "MajorChangeTimestamp": "2020-12-05T21:32:42.000Z",
+  "MajorChangeType": "Price Decrease",
+  "MiddleOrJuniorSchool": "James Tippit",
+  "MLSAreaMajor": "GTE",
+  "MlsStatus": "Active",
+  "NewConstructionYN": false,
+  "ACT_NumDining": "1",
+  "ACT_NumLiving": "1",
+  "ACT_OpenHouseCount": "2",
+  "ACT_OpenHousePublicCount": "0",
+  "OriginalEntryTimestamp": "2020-10-10T16:11:01.000Z",
+  "OriginalListPrice": 490000,
+  "OriginatingSystemName": "actris",
+  "OtherStructures": [
+    "See Remarks"
+  ],
+  "ParcelNumber": "20956500000001",
+  "ParkingFeatures": [
+    "Carport"
+  ],
+  "ParkingTotal": 4,
+  "PatioAndPorchFeatures": [
+    "Front Porch"
+  ],
+  "PoolFeatures": [
+    "None"
+  ],
+  "PoolPrivateYN": false,
+  "PreviousListPrice": 479800,
+  "PropertyCondition": [
+    "Resale",
+    "Updated/Remodeled"
+  ],
+  "PropertySubType": "Single Family Residence",
+  "PropertyType": "Residential",
+  "PublicRemarks": "Come see this gorgeous remodel in the heart of Georgetown. With so many modern updates, you're sure to feel right at home here. New chef's kitchen with custom maple cabinets and Calacatta quartz countertops. Vinyl plank flooring throughout living room, kitchen and bedrooms. Beautiful spa-like bathrooms. 36\" doorways in main spaces and master bedroom/bathroom. New HVAC and roof. Large curved driveway with a carport for plenty of parking. Extra 1100 sqft building could accommodate yoga studio, office or storage space. Schedule your in person showing today while its still available.",
+  "Roof": [
+    "Shingle"
+  ],
+  "Sewer": [
+    "Public Sewer"
+  ],
+  "SpaFeatures": [
+    "None"
+  ],
+  "SpecialListingConditions": [
+    "Standard"
+  ],
+  "StandardStatus": "Active",
+  "ACT_StatusContractualSearchDate": "2020-10-10",
+  "SubAgencyCompensation": "0.000",
+  "SubAgencyCompensationType": "%",
+  "SubdivisionName": "Santos Alfredo Add",
+  "SyndicateTo": [
+    "AustinHomeSearch.com",
+    "Homes.com",
+    "HomeSnap",
+    "ListHub",
+    "Realtor.com",
+    "Zillow/Trulia"
+  ],
+  "SyndicationRemarks": "Come see this gorgeous remodel in the heart of Georgetown. With so many modern updates, you're sure to feel right at home here. New chef's kitchen with custom maple cabinets and Calacatta quartz countertops. Vinyl plank flooring throughout living room, kitchen and bedrooms. Beautiful spa-like bathrooms. 36\" doorways in main spaces and master bedroom/bathroom. New HVAC and roof. Large curved driveway with a carport for plenty of parking. Extra 1100 sqft building could accommodate yoga studio, office or storage space. Schedule your in person showing today while its still available.",
+  "TaxAssessedValue": 272970,
+  "ACT_TaxFilledSqftTotal": "2400",
+  "TaxLegalDescription": "S7204 - SANTOS ALFREDO ADDITION, LOT 1, ACRES 0.2228",
+  "TaxMapNumber": "1",
+  "TaxYear": 2020,
+  "ACT_UnitStyle": "Single level Floor Plan",
+  "Utilities": [
+    "Electricity Available",
+    "Natural Gas Available"
+  ],
+  "View": [
+    "None"
+  ],
+  "VirtualTourURLUnbranded": "https://urldefense.com/v3/__https://my.matterport.com/show/?m=cRYqFavkw8n__;!!CHCva4lQ!VDwYj-9CwLFe61gcSnd0SuHeBnOOVVy0t_uibk_rT6Eyw5Lz2b9tDvuCnAk2We0m8hAAU5hb$",
+  "WaterfrontFeatures": [
+    "None"
+  ],
+  "WaterfrontYN": false,
+  "WaterSource": [
+    "Public"
+  ],
+  "WindowFeatures": [
+    "Double Pane Windows"
+  ],
+  "YearBuilt": 1999,
+  "YearBuiltSource": "Public Records",
+  "ModificationTimestamp": "2021-12-09T00:11:06.174Z",
+  "PhotosCount": 24,
+  "PhotosChangeTimestamp": "2021-01-13T23:00:11.562Z",
+  "City": "Georgetown",
+  "Country": "US",
+  "Directions": "From Austin, take N Interstate 35 Frontage Rd in Georgetown, Take exit 261 from I-35 N Continue on N Interstate 35 Frontage Rd, Take TX-29 E/W University Ave to Timber St",
+  "Latitude": 30.630497,
+  "Longitude": -97.680934,
+  "PostalCode": "78626",
+  "StateOrProvince": "TX",
+  "StreetName": "Timber",
+  "StreetNumber": "1506",
+  "StreetNumberNumeric": 1506,
+  "StreetSuffix": "ST",
+  "UnparsedAddress": "1506  Timber St  ",
+  "MlgCanView": true
+}
