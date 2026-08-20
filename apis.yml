@@ -19,6 +19,16 @@ description: >-
   MLS Grid web application. Certified, documented, and closed.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mls-grid.png
 tags:
+- Real-Estate
+- United States
+- MLS
+- RESO
+- Property Listings
+- IDX
+- PropTech
+- OData
+- Data Licensing
+tags_raw:
 - Real Estate
 - United States
 - MLS
@@ -50,6 +60,13 @@ apis:
   humanURL: https://docs.mlsgrid.com/api-documentation/api-version-2.0.md
   baseURL: https://api.mlsgrid.com/v2/
   tags:
+  - Real-Estate
+  - MLS
+  - RESO
+  - OData
+  - Property Listings
+  - Replication
+  tags_raw:
   - Real Estate
   - MLS
   - RESO
