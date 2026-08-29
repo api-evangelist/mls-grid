@@ -17,6 +17,17 @@ description: >-
   document returns HTTP 401. Access requires the MLS Grid Master Data License Agreement plus
   approval by each originating MLS before a long-lived OAuth 2.0 bearer token is issued in the
   MLS Grid web application. Certified, documented, and closed.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mls-grid.png
 tags:
 - Real-Estate
